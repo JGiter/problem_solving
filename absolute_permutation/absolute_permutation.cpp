@@ -8,12 +8,7 @@ string rtrim(const string &);
 vector<string> split(const string &);
 
 /*
- * Complete the 'absolutePermutation' function below.
- *
- * The function is expected to return an INTEGER_ARRAY.
- * The function accepts following parameters:
- *  1. INTEGER n
- *  2. INTEGER k
+ * Permutate sequence of first `n` natural numbers such that |permutation[i] - i| == k
  */
 
 vector<int> absolutePermutation(int n, int k)
@@ -45,11 +40,11 @@ vector<int> absolutePermutation(int n, int k)
 int main()
 {
     ofstream fout("result");
-    ifstream fin {"data"};
+    ifstream fin("data");
 
     string t_temp;
-    getline(fin, t_temp);   
-    
+    getline(fin, t_temp);
+
     int t = stoi(ltrim(rtrim(t_temp)));
 
     for (int t_itr = 0; t_itr < t; t_itr++)
