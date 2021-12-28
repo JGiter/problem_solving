@@ -22,8 +22,6 @@ vector<int> absolutePermutation(int n, int k)
     else if (remainder(n, 2 * k) == 0)
     {
         auto pos = a.begin();
-        cout << "remainder of n/k =" << remainder(n, 2 * k);
-        cout << *a.begin();
         while (pos != a.end())
         {
             std::rotate(pos, pos + k, pos + 2 * k);
@@ -37,10 +35,13 @@ vector<int> absolutePermutation(int n, int k)
     }
 }
 
-int main()
+int main(int argv, char *argc[])
 {
+    string bin_path{argc[0]};
+    string bin_dir = bin_path.substr(0, bin_path.find_last_of('/'));
+    string data_path = bin_dir + "/data";
+    ifstream fin(data_path);
     ofstream fout("result");
-    ifstream fin("data");
 
     string t_temp;
     getline(fin, t_temp);
